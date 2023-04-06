@@ -1,0 +1,190 @@
+* {
+    padding: 0; /* Retirando o Padding (espaço entre o conteúdo e a borda) da Página*/
+    margin: 0; /* Retirando a Margem da Página*/
+    box-sizing: border-box; /* Deixa a página "pronta" para começar a mexer*/
+    font-size: 20px; /* Tamanho da fonte */
+}
+
+.container {
+    min-height: 100vh; /* Altura Mínima, neste caso, com 100VH irá preencher toda a tela */
+    display: flex; /* O ELEMENTO SE TORNA UM FLEX CONTAINER, A PARTIR DISSO É POSSÍVEL MANIPULAR TODOS OS ELEMENTOS FILHOS DESSE FLEX CONTAINER */
+    flex-direction: column; /* DEFINE O "EIXO" DE EXIBIÇÃO, POR EXEMPLO ESQUERDA-DIREITA (ROW), CIMA-BAIXO (COLUMN)*/
+}
+
+
+.header {
+    width: 100%; /* Largura de 100% da tela*/
+    min-height: 40px; /* Altura Mínima de 40px*/
+    background-color: #292929; /* Cor de Fundo*/
+    display: flex; /* O elemento se torna um flex container, sendo possível manipular todos os elementos dentro dele*/
+    align-items: center; /* ALINHA OS ITENS NO EIXO CRUZADO AO PRINCIPAL (COLUMN), NESTE CASO, O VERTICAL (OPOSTO AO COLUMN/HORIZONTAL) */
+    justify-content: space-between; /* SERVE PARA ALINHAR ELEMENTOS DE ACORDO COM O "EIXO" ESCOLHIDO (ROW OU COLUMN). NESTE CASO, ESTÁ DEIXANDO CADA ELEMENTO ENCONSTADO DE CADA LADO*/
+    flex-wrap: wrap; /* DETERMINA SE OS ITENS SERÃO FORÇADOS A FICAREM NA MESMA LINHA OU SE PODEM SER QUEBRADOS EM VÁRIAS LINHAS */
+    padding: 30px; /* Espaço entre o conteúdo e a borda */
+    gap: 8px 15px; /* ESPAÇO VERTICAL E HORIZONTAL ENTRE OS ELEMENTOS. IMPEDE QUE ELES SE "ENCOSTEM" AO REDUZIR A TELA*/
+}
+
+.logonavbar {
+    width: 180px; /* Largura de 180px*/
+}
+
+.headerbtngroup {
+    display: flex; /* ELEMENTO TORNA-SE MANIPULÁVEL*/
+    gap: 15px; /* ESPAÇAMENTO ENTRE OS BOTÕES*/
+}
+
+.navbtn {
+    font-size: 16px; /* TAMANHO LETRA*/
+    padding: 6px; /* ESPAÇO ENTRE CONTEÚDO E BORDA*/
+    background-color: transparent; /* COR DE FUNDO*/
+    border: 2px solid transparent; /* BORDA */
+    color: white; /* COR DO TEXTO*/
+    cursor: pointer; /* MUDA O CURSOR PARA PONTEIRO AO PASSAR*/
+    transition: 0.6s; /* TAEMPO DO EFEITO*/
+
+}
+
+.navbtn:hover /* ANIMAÇÃO*/ {
+    border-bottom: 2px solid black /* BORDA DO BOTÃO*/
+}
+
+.sectiontitle {
+    font-size: 26px; /* TAMANHO DA FONTE */
+    font-family: Arial, Helvetica, sans-serif; /* ESTILO DA FONTE */
+    text-align: center; /* ALINHAMENTO CENTRALIZADO COM A PÁGINA*/
+    padding-top: 20px; /* ESPAÇO ENTRE O TEXTO E O ELEMENTO DE CIMA*/
+}
+
+.sectiondescription {
+    text-align: center; /* ALINHAMENTO CENTRALIZADO COM A PÁGINA*/
+    color: #383838; /* COR DO TEXTO */
+}
+
+.gridcontainer {
+    display: grid; /* ATIVA O MODO GRID NO CONTAINER, ESSE MODO BUSCA PREENCHER TODA A TELA */
+    grid-template-columns: 3fr 1fr; /* DEFINE A QUANTIDADE DE COLUNAS (CADA FR) E O ESPAÇO DA TELA OCUPADA POR ELAS (NO CASO, 2 COLUNAS COM A PRIMEIRA OCUPANDO 3FR E A SEGUNDA 1 FR) */
+    grid-template-areas: 
+    "maincontent sidebarcontent"; /* DEFINE UM TEMPLATE DE GRID */
+    padding: 20px; /* ESPAÇO ENTRE O ELEMENTO E A BORDA. NESTE CASO, PARA DAR UM ESPAÇO ENTRE AS BORDAS DA PÁGINA E O CONTEÚDO */
+    flex: 1 0 auto; /* X Y Z -> X é o Flex Grow, indicando que vai ocupar todo o espaço disponível (1). Y é o Flex Shrink, indicando que não vai diminuir (0). Z é o Flex Basis que indica o tamanho base do item */
+}
+
+
+.maincontent {
+    display: flex; /* ELEMENTO TORNA-SE MANIPULÁVEL*/
+    flex-wrap: wrap; /* DETERMINA SE OS ITENS SERÃO FORÇADOS A FICAREM NA MESMA LINHA OU SE PODEM SER QUEBRADOS EM VÁRIAS LINHAS */
+    justify-content: center; /* SERVE PARA ALINHAR ELEMENTOS DE ACORDO COM O "EIXO" ESCOLHIDO (ROW OU COLUMN). ESTÁ DEIXANDO OS ELEMENTOS CENTALIZADOS COM A SECTION RESPECTIVA DELES (3FR)*/
+    gap: 10px; /* ESPAÇAMENTO ENTRE OS ELEMENTOS*/
+    grid-area: maincontent;
+}
+
+.categorycard {
+    width: 280px; /* LARGURA */
+    height: 380px; /* ALTURA */
+    border: 2px solid transparent; /* BORDA TRANSPARENTE */
+    border-radius: 10px; /* SUAVIZAÇÃO DAR BORDAS */
+    transition: 0.5s;  /* TEMPO DE TRANSIÇÃO */
+    cursor: pointer; /* CURSOR MUDA PARA POINTER */
+}
+
+.categorycard:hover /* EFEITO */ {
+    border-color: black; /* BORDA PRETA AO PASSAR CURSOR */
+}
+
+.maincardimg {
+    width: 100%; /* LARGURA */
+    height: 180px; /* ALTURA */
+    border-radius: 10px; /* SUAVIZAÇÃO DAR BORDAS */
+}
+
+.maincategorycardtitle {
+    font-family: Arial, Helvetica, sans-serif; /* ESTILO DE FONTE */
+    padding: 6px; /* ESPAÇAMENTO ENTRE O ELEMENTO E A BORDA. NO CASO, TÍTULO, IMAGEM E DESCRIÇÃO */
+}
+
+.maincategorycarddescription {
+    padding: 6px; /* ESPAÇAMENTO ENTRE O ELEMENTO E A BORDA. NO CASO, A DESCRIÇÃO. */
+}
+
+.sidebarcontent {
+    background-color: #383838; /* COR DE FUNDO */
+    color: white; /* COR DO TEXTO */
+    padding: 16px; /* ESPAÇAMENTO ENTRE O ELEMENTO E A BORDA */
+    display: flex; /* ELEMENTO TORNA-SE MANIPULÁVEL*/
+    flex-direction: column; /* DEFINE O "EIXO" DE EXIBIÇÃO, POR EXEMPLO ESQUERDA-DIREITA (ROW), CIMA-BAIXO (COLUMN)*/
+    align-items: center; /* ALINHA OS ITENS NO EIXO CRUZADO AO PRINCIPAL (COLUMN), NESTE CASO, O VERTICAL (OPOSTO AO COLUMN/HORIZONTAL) */
+    min-height: 300px; /* ALTURA MÍNIMA */
+    grid-area: sidebarcontent; /* TEMPLATE QUE ELE DEVE SEGUIR */
+    gap: 20px; /* ESPAÇAMENTO ENTRE OS ELEMENTOS*/
+}
+
+.sidebarcard {
+    width: 75%;  /* LARGURA */
+    border: 1px solid transparent; /* BORDA TRANSPARENTE */
+    border-radius: 10px; /* SUAVIZAÇÃO DAS BORDAS */
+    transition: 0.5s; /* TEMPO DE TRANSIÇÃO */
+    cursor: pointer; /* CURSOR MUDA PARA POINTER */
+}
+
+.sidebarcardimg {
+    width: 100%; /* LARGURA */
+    border-radius: 10px; /* SUAVIZAÇÃO DAR BORDAS */
+}
+
+.sidebarcard:hover /* EFEITO */ {
+    border-color: gainsboro; /* COR DA BORDA */
+}
+
+.sidebarcardtitle {
+    font-family: Arial, Helvetica, sans-serif; /* ESTILO/FAMÍLIA DA FONTE */
+    text-align: center; /* ALINHAMENTO DO TEXTO */
+    padding: 10px; /* ESPAÇO ENTRE O ELEMENTO E A BORDA */
+}
+
+.logofooter {
+    width: 180px; /* LARGURA */
+}
+
+.footer {
+    width: 100%; /* LARGURA (OCUPANDO TODA A PÁGINA) */
+    min-height: 40px; /* ALTURA MÍNIMA (40 PX) */
+    background-color: #292929; /* COR DE FUNDO */
+    display: flex; /* TODOS OS ELEMENTOS TORNAM-SE MANIPULÁVEIS */
+    flex-wrap: wrap; /* DETERMINA SE OS ITENS SERÃO FORÇADOS A FICAREM NA MESMA LINHA OU SE PODEM SER QUEBRADOS EM VÁRIAS LINHAS (PODEM SER QUEBRADOS, POIS ESTÁ EM WRAP) */
+    align-items: center; /* ALINHA OS ITENS NO EIXO CRUZADO AO PRINCIPAL (COLUMN), NESTE CASO, O VERTICAL (OPOSTO AO COLUMN/HORIZONTAL) */
+    justify-content: space-between; /* SERVE PARA ALINHAR ELEMENTOS DE ACORDO COM O "EIXO" ESCOLHIDO (ROW OU COLUMN). NESTE CASO, ESTÁ DEIXANDO CADA ELEMENTO ENCONSTADO DE CADA LADO*/
+    padding: 30px; /* ESPAÇAMENTO ENTRE O ELEMENTO E A BORDA */
+    gap: 15px; /* ESPAÇAMENTO ENTRE OS ELEMENTOS*/
+}
+
+.footeranchor {
+    color: white; /* COR DO TEXTO */
+    text-decoration: none; /* SUBLINHADO (NESTE CASO, ESTÁ REMOVENDO) */
+}
+
+@media(max-width: 630px) /* MUDANÇA ABAIXO DE 630PX */ {
+    .gridcontainer {
+        grid-template-areas: /* TEMPLATE DE ÁREAS. NESSE CASO, SIDEBAR VAI FICAR EM BAIXO DO CONTEÚDO PRINCIPAL */
+        "maincontent"
+        "sidebarcontent";
+        display: flex; /* TODOS OS ELEMENTOS TORNAM-SE MANIPULÁVEIS */
+        flex-direction: column; /* DEFINE O "EIXO" DE EXIBIÇÃO, POR EXEMPLO ESQUERDA-DIREITA (ROW), CIMA-BAIXO (COLUMN)*/
+        align-items: center; /* ALINHA OS ITENS NO EIXO CRUZADO AO PRINCIPAL (COLUMN), NESTE CASO, O VERTICAL (OPOSTO AO COLUMN/HORIZONTAL) */
+        gap: 10px; /* ESPAÇAMENTO ENTRE MAINCONTENT E SIDEBAR CONTENT  */
+    }
+    .sidebarcontent {
+        min-width: auto; /* REMOVE O WIDTH ANTERIOR E TONA MAIS RESPONSIVO */
+    }
+    .footeranchor {
+        font-size: 19px; /* ALTERA TAMANHO DO TEXTO PARA EVITAR QUE ELE QUEBRE ANTES DO HEADER */
+    }
+}
+
+@media(max-width: 463px) {
+    .header {
+        justify-content: center; /* SERVE PARA ALINHAR ELEMENTOS DE ACORDO COM O "EIXO" ESCOLHIDO (ROW OU COLUMN). NESTE CASO, ESTÁ DEIXANDO O HEADER CENTRALIZADO AO CHEGAR NA LARGURA 463PX*/
+    }
+    .footer {
+        justify-content: center; /* SERVE PARA ALINHAR ELEMENTOS DE ACORDO COM O "EIXO" ESCOLHIDO (ROW OU COLUMN). NESTE CASO, ESTÁ DEIXANDO O FOOTER CENTRALIZADO AO CHEGAR NA LARGURA 463PX*/
+    }
+}
